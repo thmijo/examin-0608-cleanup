@@ -17,11 +17,12 @@ import { UserComponent } from './user/user.component';
 import { UserService } from './shared/user.service';
 import { ResultsComponent } from './results/results.component';
 import { ResultsService } from './shared/results.service';
+import { HomeComponent } from './ui/home/home.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule,AngularFireModule.initializeApp(environment.firebase),
  	AngularFirestoreModule,AppRoutingModule ],
-  declarations: [ AppComponent, HelloComponent, QuestionPaperComponent, HeaderComponent, ExamComponent, QuestionComponent, UserComponent, ResultsComponent ],
+  declarations: [ AppComponent, HelloComponent, QuestionPaperComponent, HeaderComponent, ExamComponent, QuestionComponent, UserComponent, ResultsComponent, HomeComponent ],
   bootstrap:    [ AppComponent ],
   providers: [QuestionService, ExamService, UserService, ResultsService]
 })

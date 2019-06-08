@@ -5,6 +5,7 @@ import {QuestionComponent} from './question-paper/question/question.component';
 import {ExamComponent} from './exam/exam.component';
 import {UserComponent} from './user/user.component';
 import {ResultsComponent} from './results/results.component';
+import {HomeComponent} from './ui/home/home.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'exams/:eId' , component: QuestionPaperComponent},
   {path: 'exams' , component: ExamComponent},
   {path: 'users' , component: UserComponent},
-  {path: 'results/:uId', component : ResultsComponent}
+  {path: 'results/:uId', component : ResultsComponent},
+  {path: '', component : HomeComponent}
 ];
 
 @NgModule({

@@ -68,6 +68,36 @@ export class ExamService {
     var batch = this.afs.firestore.batch(); 
     const db = this.afs.firestore;
     
+
+    for (var i = 0; i < 7; i++) {
+      const ref = db.collection('questions').doc();
+      const id = ref.id;
+      this.qArray.push(id);
+     // var newCityRef = this.questionCollection.doc(id).ref;
+      batch.set(this.questionCollection.doc(id).ref, { q: 'What is Captial of 1',o1: 'Option1',o2: 'Option1',o3: 'Option1',ans:'o1'}); 	
+    }
+
+
+    const ref1 = db.collection('questions').doc();
+    const id1 = ref1.id;
+    this.qArray.push(id1);
+    var newCityRef1 = this.questionCollection.doc(id1).ref;
+    batch.set(newCityRef1, { q: 'What is Captial of 1',o1: 'Option1',o2: 'Option1',o3: 'Option1',ans:'o1'});
+
+    batch.commit().then( () => {
+     console.log ("batching "+this.qArray);
+     this.getExam(this.eId).set({ questionRef : this.qArray });
+    });
+
+  } 
+
+  loadQuestions_backup(eId) {
+    this.eId = eId;
+    this.qArray = [];
+    //let QId : string  [];
+    var batch = this.afs.firestore.batch(); 
+    const db = this.afs.firestore;
+    
     const ref = db.collection('questions').doc();
     const id = ref.id;
     this.qArray.push(id);
