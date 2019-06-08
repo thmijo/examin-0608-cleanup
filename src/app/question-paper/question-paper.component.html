@@ -1,19 +1,35 @@
 
 
+<!--
 {{attemptId}}<br>
 {{currentQuestionIndex}} <br>
 {{this.questionIDs.length-1}}<br>
+-->
 <div *ngIf="currentQuestionIndex===-1" class="container">
   <div class="row">
-    <div class="col-sm-4"></div>
-    <div class="col-sm-4"></div>
+    <div class="col-md-4" class="themed-grid-col"> <div class="card align-center">
+      <div class="card-header"> Welcome to Exam </div>
+      <div class="card-body"> 
+        <p> This is a loerum ipsume exam  </p>
+        <button class="btn btn-primary" (click)="showQuestion(0)"> Start Exam </button> </div>
+    </div> </div>
+    <div class="col-md-4">
     <div class="card align-center">
       <div class="card-header"> Welcome to Exam </div>
-      <div class="card-body"> <button class="btn btn-primary" (click)="showQuestion(0)"> Start Exam1 </button> </div>
+      <div class="card-body"> 
+        <p> This is a loerum ipsume exam  </p>
+        <button class="btn btn-primary" (click)="showQuestion(0)"> Start Exam </button> </div>
     </div>
-    <div class="col-sm-4"></div>
+    </div>
+    <div class="col-md-4" class="themed-grid-col"><div class="card align-center">
+      <div class="card-header"> Welcome to Exam </div>
+      <div class="card-body"> 
+        <p> This is a loerum ipsume exam  </p>
+        <button class="btn btn-primary" (click)="showQuestion(0)"> Start Exam </button> </div>
+    </div></div>
   </div>
 </div>
+
 <!-- <form (ngSubmit)="onSubmit()" #f="ngForm"> -->
 <div *ngIf="!(currentQuestionIndex===-1)" class="container">
   <div class="row">

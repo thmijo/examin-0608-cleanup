@@ -1,23 +1,18 @@
 
-<div class="container">
-<div class="row">
-  <div class="col-sm-2">  
-    <ul class="nav flex-column">
-<div *ngFor="let attemptID of attemptIDs; let i = index">
-<li class="nav-item">
-    <a class ='btn' ><i (click)="showResult(attemptID)" class="la la-trash">{{attemptID}}</i></a>   
-</li>
-</div>
-</ul>
+<div class="d-flex" id="wrapper">
 
-</div>
-<div class="col-sm-10">
-<div class="container">
-<div class = "row">
-    <div class="col-sm-3">  
-  </div>
-<div class="col-sm-6">
-  {{currentAttemptId}}
+   <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="list-group list-group-flush">
+          <a *ngFor="let attemptID of attemptIDs" class="btn list-group-item list-group-item-action bg-light"
+            ><i (click)="showResult(attemptID)" class="la la-trash">{{attemptID}}</i></a
+          >
+          
+        </div>
+   </div>
+
+      <div id="page-content-wrapper">
+        <div class="container-fluid">
+         {{currentAttemptId}}
 <div *ngFor="let question of attemptDetails; let i = index">
    <div class="card">
       <div class="card-header"> {{i+1}} .  {{question.qId}}
@@ -38,6 +33,24 @@
         <tr *ngIf="!(question.sel===question.ans)"> <td> Wrong Answer </td> </tr> 
       </table>
   </div>
+        </div>
+      </div>
+
+
+<div class="container">
+<div class="row">
+  <div class="col-sm-2">  
+    <ul class="nav flex-column">
+</ul>
+
+</div>
+<div class="col-sm-10">
+<div class="container">
+<div class = "row">
+    <div class="col-sm-3">  
+  </div>
+<div class="col-sm-6">
+  
 </div>
 </div>
   <div class="col-sm-3">
@@ -47,3 +60,4 @@
 </div> 
 </div>
 </div>
+</div> <!-- /#wrapper -->
